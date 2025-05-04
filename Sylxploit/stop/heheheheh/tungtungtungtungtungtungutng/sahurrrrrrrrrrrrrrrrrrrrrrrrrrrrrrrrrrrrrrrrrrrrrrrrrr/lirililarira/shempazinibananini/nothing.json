@@ -1,6 +1,6 @@
 {
-  "command": " "
-  "runcommand": "no"
-  "slowloris": "yes"
+  "command": " ",
+  "runcommand": "no",
+  "slowloris": "yes",
   "dos": "no"
 }
