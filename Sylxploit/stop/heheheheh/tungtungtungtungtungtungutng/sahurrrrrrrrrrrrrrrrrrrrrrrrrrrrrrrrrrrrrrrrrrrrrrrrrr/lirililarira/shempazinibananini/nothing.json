@@ -1,6 +1,6 @@
 {
   "command": null,
   "runcommand": "no",
-  "slowloris": "yes",
+  "slowloris": "no",
   "dos": "no"
 }
