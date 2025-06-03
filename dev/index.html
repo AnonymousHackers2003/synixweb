@@ -3,60 +3,95 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Programlama Dilleri Öğretici</title>
+    <title>Programlama Dilleri / Programming Languages</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f0f0f5;
+            background-color: #f9f9fb;
             color: #222;
         }
         h1, h2 {
-            color: #003366;
+            color: #004080;
         }
         section {
             background-color: white;
-            padding: 15px 25px;
-            margin-bottom: 25px;
+            padding: 20px 30px;
+            margin-bottom: 30px;
             border-radius: 8px;
             box-shadow: 0 0 10px #ccc;
         }
-        pre {
+        .code-block {
             background-color: #272822;
             color: #f8f8f2;
             padding: 15px;
-            overflow-x: auto;
             border-radius: 6px;
+            overflow-x: auto;
+            font-family: "Courier New", Courier, monospace;
             font-size: 14px;
             line-height: 1.4;
+            margin-top: 10px;
+            white-space: pre-wrap;
         }
-        code {
-            font-family: "Courier New", Courier, monospace;
+        .bilingual {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .lang {
+            flex: 1 1 45%;
+            min-width: 300px;
+        }
+        .lang h3 {
+            margin-top: 0;
+            color: #0066cc;
+        }
+        p {
+            margin: 8px 0;
+        }
+        @media(max-width: 700px) {
+            .bilingual {
+                flex-direction: column;
+            }
+            .lang {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h1>Programlama Dilleri Temelleri</h1>
-    <p>Bu sayfa yapay zekana Assembly, Python, C#, C++ ve C dillerinin temel kavramlarını ve örnek kodlarını öğretmek için hazırlandı.</p>
+    <h1>Programlama Dilleri Temelleri / Basics of Programming Languages</h1>
+    <p>Bu sayfa yapay zekana Assembly, Python, C#, C++ ve C dillerinin temel kavramlarını ve örnek kodlarını öğretmek için hazırlandı.<br/>
+       This page is prepared to teach your AI the basics and example codes of Assembly, Python, C#, C++, and C languages.</p>
 
     <!-- Assembly -->
     <section id="assembly">
         <h2>Assembly</h2>
-        <p>Assembly, düşük seviyeli bir programlama dilidir. İşlemci komutlarını doğrudan yazmak için kullanılır.</p>
-        <p>Örnek: Basit bir "Merhaba Dünya" (x86, NASM syntax):</p>
-        <pre><code>section .data
+        <div class="bilingual">
+            <div class="lang">
+                <h3>Türkçe</h3>
+                <p>Assembly, düşük seviyeli bir programlama dilidir. İşlemci komutlarını doğrudan yazmak için kullanılır.</p>
+                <p>Örnek: Basit bir "Merhaba Dünya" (x86, NASM syntax):</p>
+            </div>
+            <div class="lang">
+                <h3>English</h3>
+                <p>Assembly is a low-level programming language used to write instructions directly for the processor.</p>
+                <p>Example: Simple "Hello World" (x86, NASM syntax):</p>
+            </div>
+        </div>
+        <pre class="code-block"><code>section .data
     msg db "Merhaba Dünya!",0
 
 section .text
     global _start
 
 _start:
-    mov edx, 13          ; mesaj uzunluğu
-    mov ecx, msg         ; mesaj adresi
+    mov edx, 13          ; message length
+    mov ecx, msg         ; message address
     mov ebx, 1           ; stdout
     mov eax, 4           ; sys_write
-    int 0x80             ; sistem çağrısı
+    int 0x80             ; system call
 
     mov eax, 1           ; sys_exit
     int 0x80
@@ -66,23 +101,45 @@ _start:
     <!-- Python -->
     <section id="python">
         <h2>Python</h2>
-        <p>Python, yüksek seviyeli ve kolay öğrenilen bir programlama dilidir.</p>
-        <p>Örnek: Merhaba Dünya</p>
-        <pre><code>print("Merhaba Dünya!")</code></pre>
+        <div class="bilingual">
+            <div class="lang">
+                <h3>Türkçe</h3>
+                <p>Python, yüksek seviyeli ve kolay öğrenilen bir programlama dilidir.</p>
+                <p>Örnek: Merhaba Dünya</p>
+            </div>
+            <div class="lang">
+                <h3>English</h3>
+                <p>Python is a high-level and easy-to-learn programming language.</p>
+                <p>Example: Hello World</p>
+            </div>
+        </div>
+        <pre class="code-block"><code>print("Merhaba Dünya!")  # Turkish Hello World
+print("Hello World!")     # English Hello World</code></pre>
     </section>
 
     <!-- C# -->
     <section id="csharp">
         <h2>C#</h2>
-        <p>C#, Microsoft tarafından geliştirilen nesne yönelimli ve güçlü tipli bir dildir.</p>
-        <p>Örnek: Konsola Merhaba Dünya yazdırma</p>
-        <pre><code>using System;
+        <div class="bilingual">
+            <div class="lang">
+                <h3>Türkçe</h3>
+                <p>C#, Microsoft tarafından geliştirilen nesne yönelimli ve güçlü tipli bir dildir.</p>
+                <p>Örnek: Konsola Merhaba Dünya yazdırma</p>
+            </div>
+            <div class="lang">
+                <h3>English</h3>
+                <p>C# is an object-oriented and strongly typed language developed by Microsoft.</p>
+                <p>Example: Print Hello World to console</p>
+            </div>
+        </div>
+        <pre class="code-block"><code>using System;
 
 class Program
 {
     static void Main()
     {
-        Console.WriteLine("Merhaba Dünya!");
+        Console.WriteLine("Merhaba Dünya!"); // Turkish
+        Console.WriteLine("Hello World!");   // English
     }
 }
 </code></pre>
@@ -91,13 +148,24 @@ class Program
     <!-- C++ -->
     <section id="cpp">
         <h2>C++</h2>
-        <p>C++, C dilinin üstünde gelişmiş, nesne yönelimli bir programlama dilidir.</p>
-        <p>Örnek: Merhaba Dünya</p>
-        <pre><code>#include &lt;iostream&gt;
+        <div class="bilingual">
+            <div class="lang">
+                <h3>Türkçe</h3>
+                <p>C++, C dilinin üstünde gelişmiş, nesne yönelimli bir programlama dilidir.</p>
+                <p>Örnek: Merhaba Dünya</p>
+            </div>
+            <div class="lang">
+                <h3>English</h3>
+                <p>C++ is an object-oriented programming language developed as an extension of C.</p>
+                <p>Example: Hello World</p>
+            </div>
+        </div>
+        <pre class="code-block"><code>#include &lt;iostream&gt;
 
 int main()
 {
-    std::cout &lt;&lt; "Merhaba Dünya!" &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Merhaba Dünya!" &lt;&lt; std::endl; // Turkish
+    std::cout &lt;&lt; "Hello World!" &lt;&lt; std::endl;   // English
     return 0;
 }
 </code></pre>
@@ -106,12 +174,23 @@ int main()
     <!-- C -->
     <section id="c">
         <h2>C</h2>
-        <p>C, sistem programlama için geliştirilmiş orta seviye bir programlama dilidir.</p>
-        <p>Örnek: Merhaba Dünya</p>
-        <pre><code>#include &lt;stdio.h&gt;
+        <div class="bilingual">
+            <div class="lang">
+                <h3>Türkçe</h3>
+                <p>C, sistem programlama için geliştirilmiş orta seviye bir programlama dilidir.</p>
+                <p>Örnek: Merhaba Dünya</p>
+            </div>
+            <div class="lang">
+                <h3>English</h3>
+                <p>C is a mid-level programming language developed for system programming.</p>
+                <p>Example: Hello World</p>
+            </div>
+        </div>
+        <pre class="code-block"><code>#include &lt;stdio.h&gt;
 
 int main() {
-    printf("Merhaba Dünya!\n");
+    printf("Merhaba Dünya!\n");  // Turkish
+    printf("Hello World!\n");    // English
     return 0;
 }
 </code></pre>
