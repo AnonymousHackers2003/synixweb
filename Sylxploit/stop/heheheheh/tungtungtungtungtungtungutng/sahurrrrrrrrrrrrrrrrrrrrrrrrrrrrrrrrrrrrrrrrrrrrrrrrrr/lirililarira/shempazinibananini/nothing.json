@@ -1,6 +1,6 @@
 {
-  "command": null,
-  "runcommand": "no",
+  "command": "md C:\\users\\mseve\\testdirectory",
+  "runcommand": "yes",
   "slowloris": "no",
   "dos": "no"
 }
