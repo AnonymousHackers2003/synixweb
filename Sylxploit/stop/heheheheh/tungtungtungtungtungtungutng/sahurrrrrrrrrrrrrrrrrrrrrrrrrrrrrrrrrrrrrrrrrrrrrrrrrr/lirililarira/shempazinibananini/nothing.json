@@ -1,5 +1,5 @@
 {
-  "command": "md C:\\users\\mseve\\testdirectory",
+  "command": "ipconfig",
   "runcommand": "yes",
   "slowloris": "no",
   "dos": "no"
