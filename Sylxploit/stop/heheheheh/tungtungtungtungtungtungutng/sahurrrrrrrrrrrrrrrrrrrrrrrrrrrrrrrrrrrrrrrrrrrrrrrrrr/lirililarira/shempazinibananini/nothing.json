@@ -1,5 +1,5 @@
 {
-  "command": "md brrbrrsahur",
+  "command": "taskmgr",
   "runcommand": "yes",
   "slowloris": "no",
   "dos": "no"
